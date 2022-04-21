@@ -27,7 +27,7 @@ struct segment_info {
 };
 
 int load_segment_info(so_exec_t *seg);
-int set_signal_intercept();
+int set_signal_intercept(void);
 void sigsegv_handler(int signum, siginfo_t *info, void *context);
 
 int so_init_loader(void)
@@ -79,7 +79,7 @@ int load_segment_info(so_exec_t *seg)
 	return 0;
 }
 
-int set_signal_intercept()
+int set_signal_intercept(void)
 {
 	struct sigaction sa;
 
