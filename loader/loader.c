@@ -1,9 +1,3 @@
-/*
- * Loader Implementation
- *
- * 2018, Operating Systems
- */
-
 #include <fcntl.h>
 #include <math.h>
 #include <signal.h>
@@ -27,12 +21,11 @@ struct segment_info {
 };
 
 int load_segment_info(so_exec_t *seg);
-int set_signal_intercept(void);
+int set_signal_intercept();
 void sigsegv_handler(int signum, siginfo_t *info, void *context);
 
 int so_init_loader(void)
 {
-	/* TODO: initialize on-demand loader */
 	page_size = getpagesize();
 	int ret = set_signal_intercept();
 
@@ -79,7 +72,7 @@ int load_segment_info(so_exec_t *seg)
 	return 0;
 }
 
-int set_signal_intercept(void)
+int set_signal_intercept()
 {
 	struct sigaction sa;
 
