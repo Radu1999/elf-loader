@@ -1,3 +1,5 @@
+#include "loader.h"
+#include "exec_parser.h"
 #include <fcntl.h>
 #include <math.h>
 #include <signal.h>
@@ -6,9 +8,6 @@
 #include <string.h>
 #include <sys/mman.h>
 #include <unistd.h>
-
-#include "exec_parser.h"
-#include "loader.h"
 
 static so_exec_t *exec;
 static struct sigaction default_signal_action;
