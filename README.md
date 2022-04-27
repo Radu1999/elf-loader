@@ -20,7 +20,7 @@ in care se gaseste adresa sa fie facuta cu cautare binara (de aceea am si intreb
 ## Implementare
 
 - Intregul enunt al temei e implementat
-- Flow-ul este cel cerut in enunt: Interceptez SIGSECV, lucru ce da trigger functiei de tratare
+- Flow-ul este cel cerut in enunt: Interceptez SIGSEGV, lucru ce da trigger functiei de tratare
 a semnalului (treat_faulted_address) care identifica segmentul din care face parte adresa faulted si
 pagina din cadrul acelui segment, ca mai apoi folosind functia map_page sa incerce sa mapeze bucata in memorie.
 - O problema interesanta pe care am depistat-o relativ greu a fost data de faptul ca file_size este unsigned si eu ma asteptam unde calculez cati octeti mai sunt necesari de citit ca un rezultat sa fie 
